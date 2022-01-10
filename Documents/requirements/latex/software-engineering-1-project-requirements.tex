@@ -1,0 +1,186 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage[hidelinks]{hyperref}
+\usepackage[section]{placeins}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{xepersian}
+
+\settextfont{XB Niloofar}
+\title{
+بسم اللّه الرّحمن الرّحیم
+~\vspace{0.5cm}
+\begin{center}
+	\includegraphics[width=0.2\linewidth]{assets/defaults/iut}
+\end{center}
+~\vspace{0.5cm}
+دانشگاه صنعتی اصفهان
+~\vspace{1cm}
+\\
+{
+	\huge
+نیازمندی های پروژه درس مهندسی نرم افزار ۱
+\\~\\
+\lr{GDM}
+\\
+\lr{(Game Development Manager)}
+}
+~\vspace{1cm}
+}
+\author{
+محمد کسائی
+,
+آرین هادی
+,
+نامی نذیری
+,
+سید محمد غضنفری
+}
+
+\begin{document}
+ \maketitle
+	\part{	\lr{Nonfunctional Requirements}}
+	\section{\lr{Performance Requirements}}
+	\subsection{قابلیت پاسخگویی هر درخواست  در حداکثر یک ثانیه را داشته باشد}
+	\subsection{اضافه کردن تسک به سیستم میبایست در کمتر از ۱ ثانیه رخ دهد}
+	\section{\lr{Operational Requirements}}
+	\subsection{سیستم تحت وب کار میکند و مستقل از سیستم عامل خاصی میباشد}
+	\subsection{از سیستم باید به صورت مداوم نسخه پشتیبان تهیه شود و در صورت خواست مشتری در سرور های موردنظرش نگهداری شود}
+	\section{\lr{Availability Requirements}}
+	\subsection{با توجه به ماهیت سیستم ، سیستم میبایست به صورت ۲۴/۷ کار کند}
+	\subsection{
+		سیستم میبایست دارای 
+		\lr{uptime}
+		$99.9$
+درصد یا بیش‌تر باشد.
+	}
+	\section{\lr{Reliability Requirements}}
+	\subsection{به دلیل نیاز به اطلاع رسانی ددلاین ها میبایست این اعلان ها به صورت به موقع پخش شوند}
+	به طور مثال لازم است که خطا و وقفه حداکثر یک اعلان در هر ۱۰۰۰ مورد باشد
+	\section{\lr{Security Requirements}}
+	\subsection{پروژه های تعریف شده‌ی هر شرکت یا تیم میبایست به صورت امن نگهداری شود و تیم ها یا شرکت ها به پروژه های یک دیگر دسترسی نداشته باشند}
+	\subsection{در مقابل نفوذ های امنیتی سیستم میبایست واکنش مناسب و آمادگی مناسب داشته باشد}
+	\subsection{نقش های موجود در هر پروژه با توجه به سطح دسترسی خود از یکدیگر جدا شوند و به هم دسترسی نداشته باشند}
+	\section{\lr{Usability Requirements}}
+	\subsection{یادگیری کار با ددلاین ها و تسک های پروژه برای کاربر نهایی راحت و سریع باشد}
+	\newpage
+	
+	\part{\lr{Functional Requirements}}
+	\section{
+		\lr{User sign in and sign up}
+	}
+\begin{itemize}
+	\item 
+	کاربر می‌تواند ثبت‌نام کند.
+	\item
+	کاربر با وارد کردن نام‌کاربری و رمزعبور وارد می‌شود.
+\end{itemize}
+
+	\section{
+		\lr{User Dashboard}
+	}
+	\subsection{
+		\lr{Edit personal profile}
+	}
+\begin{itemize}
+	\item 
+تغییر ویژگی حساب‌کاربری (مانند نام‌کاربری و رمزعبور و ...)
+\end{itemize}
+	\subsection{
+		\lr{Buy and change service configuration}
+	}
+
+\begin{itemize}
+	\item 
+مشاهده‌ی وضعیت سرویس‌های فعال 
+	\item
+تمدید سرویس‌های موجود
+	\item
+خرید سرویس جدید
+\end{itemize}
+
+	\subsection{
+		\lr{Active projects}
+	}
+
+\begin{itemize}
+	\item 
+مشاهده‌ی ویژگی‌های کلی پروژه (مانند نام ، افراد شرکت‌کننده و ...)
+\end{itemize}
+
+	\subsection{
+	\lr{Project Detail}
+}
+این بخش مربوط به مدیریت پروژه است.
+\begin{itemize}
+	\item 
+	حذف یا اضافه کردن افراد
+	\item
+حذف یا اضافه کردن تسک‌ها
+	\item
+	انتساب تسک‌ها به افراد مختلف
+	\item
+	اضافه کردن نقش‌ها و انتساب به کاربران
+
+	\item
+	منابع مشترک (منابع هنری ، مراحل بازی ، موسیقی متن و ...)
+\end{itemize}
+
+
+\subsection{
+\lr{Role Detail}
+}
+\begin{itemize}
+	\item
+تعیین دسترسی‌های مجاز
+\item
+تعیین دسترسی‌های غیرمجاز
+\item
+تغییر کاربرانی که به این نقش متصل شده‌اند.
+\end{itemize}
+
+
+\subsection{
+	\lr{Task Detail}
+}
+این بخش مربوط به مدیریت تسک ها در یک پروژه است.
+\begin{itemize}
+	\item
+تعیین اولویت (به صورت کیفی کم ، متوسط ، زیاد)
+	\item 
+	حذف یا اضافه کردن افراد
+	\item
+تغییر ددلاین 
+	\item
+	چک لیست فعالیت‌ها
+
+\end{itemize}
+
+\subsection{
+\lr{Deadline detail}
+}
+\begin{itemize}
+	\item 
+تغییر زمان ددلاین
+	\item
+تغییر وضعیت اعلان برای کاربران
+	\item
+روش ارسال اعلان (پیامک و ایمیل و یا هماهنگی با سیستم‌های دیگر)
+\end{itemize}
+
+
+
+
+
+
+
+
+
+\end{document}
+

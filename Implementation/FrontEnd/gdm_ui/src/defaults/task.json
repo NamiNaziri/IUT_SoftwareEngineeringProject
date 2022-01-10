@@ -1,0 +1,10 @@
+{
+  "NC": "Not Completed",
+  "CP": "Check Pending",
+  "C": "Completed",
+  "F": "Failed",
+  "completed": "C",
+  "not_completed": "NC",
+  "check_pending": "CP",
+  "failed": "F"
+}
